@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKS FinSight Nexus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+  h1 {
+    text-align: center;
+    color: #1a1a2e;
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  p.subtitle {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .card {
+    display: block;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border-top: 4px solid #2E86C1;
+    text-align: center;
+  }
+  .card:active { transform: scale(0.98); }
+  .card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+  .card .icon { font-size: 32px; margin-bottom: 10px; display: block; }
+  .card h2 { font-size: 17px; color: #1a1a2e; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: #6b7280; line-height: 1.4; }
+  .card.fr { border-top-color: #2E86C1; }
+  .card.gst { border-top-color: #C0392B; }
+  .card.tax { border-top-color: #2E86C1; }
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: #9ca3af;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>AKS FinSight Nexus</h1>
+    <p class="subtitle">Guidance on Finance, Investing &amp; Taxation</p>
+
+    <div class="grid">
+      <a class="card fr" href="financial-reporting/index.html">
+        <span class="icon">📊</span>
+        <h2>Financial Reporting</h2>
+        <p>Ind AS, Schedule III, Accountings &amp; formats</p>
+      </a>
+
+      <a class="card gst" href="gst/index.html">
+        <span class="icon">🧾</span>
+        <h2>GST</h2>
+        <p>Compliance, returns &amp; notes</p>
+      </a>
+
+      <a class="card tax" href="income-tax/index.html">
+        <span class="icon">💰</span>
+        <h2>Income Tax</h2>
+        <p>Provisions, computations &amp; updates</p>
+      </a>
+    </div>
+
+    <footer>CA Amit Singh · AKS FinSight Nexus</footer>
+  </div>
+</body>
+</html>
