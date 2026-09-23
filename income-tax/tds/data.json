@@ -1,0 +1,1071 @@
+[
+  {
+    "cat": "Salary",
+    "nature": "Salary",
+    "oldSection": "192",
+    "newSection": "392",
+    "desc": "TDS on salary paid by an employer to an employee — government or private.",
+    "variants": [
+      {
+        "condition": "All employees (State Govt., Union Govt., non-Govt.)",
+        "code": "1001–1003",
+        "rate": "Slab rate",
+        "threshold": "As per applicable slab/exemption limit"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "No flat rate — computed on estimated annual taxable salary after all declared deductions/exemptions, spread evenly across the year's pay cycles."
+    ],
+    "keywords": "salary employee employer payroll slab tds on salary"
+  },
+  {
+    "cat": "Salary",
+    "nature": "Accumulated PF balance withdrawal (taxable portion)",
+    "oldSection": "192A",
+    "newSection": "392(7)",
+    "desc": "Premature withdrawal of the taxable part of accumulated EPF balance, if service is under 5 years.",
+    "variants": [
+      {
+        "condition": "Any employee",
+        "code": "1004",
+        "rate": "10%",
+        "threshold": "₹50,000"
+      }
+    ],
+    "noPan": "20% (Maximum Marginal Rate is not applied here, unlike some other heads)",
+    "notes": [
+      "No TDS if service exceeds 5 years, or transfer is between recognised PF accounts, or withdrawal is due to ill-health/discontinuation of employer's business."
+    ],
+    "keywords": "epf pf provident fund withdrawal premature"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Insurance commission",
+    "oldSection": "194D",
+    "newSection": "393(1) Sl.1(i)",
+    "desc": "Commission paid to insurance agents for soliciting/procuring insurance business.",
+    "variants": [
+      {
+        "condition": "Payee is an Individual",
+        "code": "1005",
+        "rate": "2%",
+        "threshold": "₹20,000/yr"
+      },
+      {
+        "condition": "Payee is a company or other entity",
+        "code": "1005*",
+        "rate": "10%",
+        "threshold": "₹20,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Rate depends on who receives the commission (the agent), not who pays it.",
+      "Cut from 5%/10% to 2%/10% on 1 Oct 2024 — carried forward, not a 2026 change."
+    ],
+    "keywords": "insurance commission agent lic policy"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Commission or brokerage (other than insurance, and other than securities brokerage by stock exchange)",
+    "oldSection": "194H",
+    "newSection": "393(1) Sl.1(ii)",
+    "desc": "Any commission or brokerage paid to a resident, excluding insurance commission (194D) and underwriting commission.",
+    "variants": [
+      {
+        "condition": "Any resident payee",
+        "code": "1006",
+        "rate": "2%",
+        "threshold": "₹20,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Individual/HUF payers deduct only once their own turnover/receipts cross the specified-person threshold (₹1 crore business / ₹50 lakh profession in the preceding year)."
+    ],
+    "keywords": "commission brokerage agent dealer"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Rent",
+    "oldSection": "194-I",
+    "newSection": "393(1) Sl.2(ii)",
+    "desc": "Rent paid by a company, firm, or audit-liable individual/HUF for any land, building, furniture, plant or machinery.",
+    "variants": [
+      {
+        "condition": "Plant, machinery or equipment",
+        "code": "1008",
+        "rate": "2%",
+        "threshold": "₹50,000/month (≈₹6,00,000/yr)"
+      },
+      {
+        "condition": "Land, building or furniture/fittings",
+        "code": "1009",
+        "rate": "10%",
+        "threshold": "₹50,000/month (≈₹6,00,000/yr)"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Threshold is per payee, aggregated across the year, checked monthly.",
+      "A separate, lower-threshold rule (194-IB) applies instead when the tenant is an individual/HUF not liable to tax audit — see that section."
+    ],
+    "keywords": "rent land building furniture office premises landlord machinery equipment plant hire"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Rent paid by an individual/HUF not liable to tax audit",
+    "oldSection": "194-IB",
+    "newSection": "393(1) Sl.2(i)",
+    "desc": "Rent on any property paid by an individual or HUF who is not otherwise required to deduct TDS under 194-I (i.e., not liable to tax audit in the preceding year).",
+    "variants": [
+      {
+        "condition": "Individual/HUF tenant, any property type",
+        "code": "Pending CBDT code",
+        "rate": "2%",
+        "threshold": "₹50,000/month"
+      }
+    ],
+    "noPan": "20% (capped at last month's rent if tenancy ends mid-year)",
+    "notes": [
+      "Rate cut from 5% to 2% on 1 Oct 2024 — carried forward, not a 2026 change.",
+      "Applies regardless of turnover — this is the one rent provision with no audit-based exemption for individuals/HUF.",
+      "Deducted once a year (or on vacating), not monthly — a single challan-cum-statement (Form 141) suffices."
+    ],
+    "keywords": "rent individual huf tenant landlord flat house not audit"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Payment under Joint Development Agreement (JDA), consideration not wholly in kind",
+    "oldSection": "194-IC",
+    "newSection": "393(1) Sl.3(ii)",
+    "desc": "Monetary consideration paid by a developer to a landowner under a JDA for development of property.",
+    "variants": [
+      {
+        "condition": "Any resident landowner",
+        "code": "1011",
+        "rate": "10%",
+        "threshold": "No threshold"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Applies only to the cash component; consideration given wholly in kind (constructed area) is taxed on transfer of that share, not under this section."
+    ],
+    "keywords": "joint development agreement jda land owner developer"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Purchase of immovable property (other than rural agricultural land)",
+    "oldSection": "194-IA",
+    "newSection": "393(1) Sl.3(iii)",
+    "desc": "TDS by the buyer of any immovable property on the consideration paid to a resident seller.",
+    "variants": [
+      {
+        "condition": "Any resident seller",
+        "code": "1012",
+        "rate": "1%",
+        "threshold": "₹50 lakh (consideration or stamp duty value, whichever higher)"
+      }
+    ],
+    "noPan": "20% — the standard rate here, NOT the concessional 5% used for goods purchase/e-commerce",
+    "notes": [
+      "Deducted on the FULL consideration once the ₹50 lakh threshold is crossed — not just the excess.",
+      "Where multiple buyers/sellers are involved, the threshold is tested on the aggregate transaction value, not each individual's share.",
+      "Deposited via Form 141 within 30 days from month-end of deduction; seller gets a Form 16B-equivalent certificate."
+    ],
+    "keywords": "property purchase flat house immovable builder buyer stamp duty"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Income from units of mutual funds",
+    "oldSection": "194K",
+    "newSection": "393(1) Sl.4(i)",
+    "desc": "Income (other than capital gains) distributed on mutual fund units to a resident unit holder.",
+    "variants": [
+      {
+        "condition": "Any resident unit holder",
+        "code": "1013",
+        "rate": "10%",
+        "threshold": "₹10,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "keywords": "mutual fund units income distribution",
+    "notes": [
+      "Threshold raised from ₹5,000 to ₹10,000 by Budget 2025."
+    ]
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Interest on securities",
+    "oldSection": "193",
+    "newSection": "393(1) Sl.5(i)",
+    "desc": "Interest on debentures, government securities, and other listed/unlisted securities.",
+    "variants": [
+      {
+        "condition": "Any resident payee",
+        "code": "1019",
+        "rate": "10%",
+        "threshold": "₹10,000/yr (debentures of a widely-held company); no threshold for most other securities"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "No TDS on interest on securities held in demat form and listed on a recognised stock exchange, subject to conditions.",
+      "No TDS on interest on notified Government securities (e.g. 8% Savings (Taxable) Bonds threshold ₹10,000 applies)."
+    ],
+    "keywords": "interest securities debenture bond government security"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Interest other than interest on securities (bank/FD/deposit interest)",
+    "oldSection": "194A",
+    "newSection": "393(1) Sl.5(ii)/(iii)",
+    "desc": "Interest paid by banks, co-operative societies, post offices and others (not being interest on securities).",
+    "variants": [
+      {
+        "condition": "Bank/FD interest — senior citizen (60+)",
+        "code": "1020",
+        "rate": "10%",
+        "threshold": "₹1,00,000/yr"
+      },
+      {
+        "condition": "Bank/FD interest — others (below 60)",
+        "code": "1021",
+        "rate": "10%",
+        "threshold": "₹50,000/yr"
+      },
+      {
+        "condition": "Interest from co-operative society or post office deposits",
+        "code": "1022",
+        "rate": "10%",
+        "threshold": "₹10,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Bank applies the ₹1,00,000 senior-citizen threshold automatically using the age on record — no separate application needed.",
+      "Submit Form 121 (replaces 15G/15H) to prevent deduction where total income is below the taxable limit.",
+      "No TDS on interest credited to a savings account, or on compensation awarded by a Motor Accident Claims Tribunal below ₹50,000."
+    ],
+    "keywords": "fd interest fixed deposit bank senior citizen co-operative post office"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Payments to contractors/sub-contractors",
+    "oldSection": "194C",
+    "newSection": "393(1) Sl.6(i)",
+    "desc": "Payment for carrying out any work (including supply of labour) under a contract, by specified persons.",
+    "variants": [
+      {
+        "condition": "Payee (contractor) is an Individual/HUF",
+        "code": "1023",
+        "rate": "1%",
+        "threshold": "₹30,000 single payment, or ₹1,00,000 aggregate in the year"
+      },
+      {
+        "condition": "Payee (contractor) is a company, firm or other entity",
+        "code": "1024",
+        "rate": "2%",
+        "threshold": "₹30,000 single payment, or ₹1,00,000 aggregate in the year"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "The 1% vs 2% split depends on who is BEING PAID (the contractor), never on who is paying.",
+      "Separate condition on the payer's side: an individual/HUF payer must deduct at all only once their own business turnover exceeded ₹1 crore, or professional receipts exceeded ₹50 lakh, in the preceding year — the 'specified person' test. Below that, no deduction obligation arises regardless of the contractor's status.",
+      "Small-transporter exemption continues under Sec 393(4) (old 194C(6)): a transporter owning ≤10 goods carriages during the year, furnishing PAN + declaration, is exempt. Exemption covers only owned carriages, and stops applying (prospectively) once the 11th carriage is added."
+    ],
+    "keywords": "contractor payment individual huf works contract sub-contractor payee transporter"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Fees for professional or technical services, royalty, director's fees",
+    "oldSection": "194J",
+    "newSection": "393(1) Sl.6(iii)",
+    "desc": "Fees for professional services, technical services, royalty, non-compete fees, and any director's remuneration not in the nature of salary.",
+    "variants": [
+      {
+        "condition": "Fees for technical services / call-centre operations / royalty for sale/distribution/exhibition of films",
+        "code": "1026",
+        "rate": "2%",
+        "threshold": "₹50,000/yr"
+      },
+      {
+        "condition": "Professional fees (CA/CS/CMA, legal, medical, engineering, architectural, interior decor, advertising, technical consultancy etc.)",
+        "code": "1027",
+        "rate": "10%",
+        "threshold": "₹50,000/yr"
+      },
+      {
+        "condition": "Director's fees / sitting fees (not being salary)",
+        "code": "1028",
+        "rate": "10%",
+        "threshold": "No threshold"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Confusing professional fees (10%) with technical services (2%) is the single most common under-deduction error under this section — audit/CA fees, legal fees and medical fees are 'professional', not 'technical'.",
+      "Director's fees apply from the first rupee — the ₹50,000 threshold does not apply to this variant."
+    ],
+    "keywords": "professional fees ca legal medical consultancy audit fee lawyer doctor architect technical services call centre director sitting fees royalty"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Dividend",
+    "oldSection": "194",
+    "newSection": "393(1) Sl.7",
+    "desc": "Dividend (including deemed dividend and dividend on preference shares) paid by an Indian company to a resident shareholder.",
+    "variants": [
+      {
+        "condition": "Any resident shareholder",
+        "code": "1029",
+        "rate": "10%",
+        "threshold": "₹10,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "No TDS if paid to LIC, GIC, another insurer, or to a shareholder who submits a valid Form 121 (income below taxable limit)."
+    ],
+    "keywords": "dividend shares preference equity shareholder"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Life insurance policy maturity / survival benefit (taxable portion)",
+    "oldSection": "194DA",
+    "newSection": "393(1) Sl.8(i)",
+    "desc": "Sum received under a life insurance policy (including bonus) that is not exempt under Sec 10(10D).",
+    "variants": [
+      {
+        "condition": "Any resident policyholder",
+        "code": "1030",
+        "rate": "2%",
+        "threshold": "₹1,00,000/yr (aggregate maturity payouts from that insurer)"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Deducted on the INCOME COMPONENT (sum received minus premiums paid), not the gross payout.",
+      "Cut from 5% to 2% on 1 Oct 2024 — carried forward, not a 2026 change."
+    ],
+    "keywords": "lic maturity life insurance survival benefit policy bonus"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Purchase of goods",
+    "oldSection": "194Q",
+    "newSection": "393(1) Sl.8(ii)",
+    "desc": "TDS by a buyer of goods on the value paid/payable to a resident seller.",
+    "variants": [
+      {
+        "condition": "Buyer's turnover exceeded ₹10 crore in the preceding year",
+        "code": "1031",
+        "rate": "0.1%",
+        "threshold": "Value exceeding ₹50 lakh from one seller in the year"
+      }
+    ],
+    "noPan": "5%",
+    "notes": [
+      "Deducted only on the amount exceeding ₹50 lakh, not the full value (unlike 194-IA property purchase).",
+      "The overlapping TCS under old Section 206C(1H) was withdrawn from 1 April 2025 — this TDS is now the only compliance point for high-value goods purchase."
+    ],
+    "keywords": "purchase of goods buyer supplier"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Business perquisites or benefits (in cash or kind)",
+    "oldSection": "194R",
+    "newSection": "393(1) Sl.8(iv)",
+    "desc": "Any benefit or perquisite (cash or in kind) arising from business or profession, given to a resident.",
+    "variants": [
+      {
+        "condition": "Any resident recipient",
+        "code": "1033",
+        "rate": "10%",
+        "threshold": "₹20,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Covers free samples, sponsored trips, gift vouchers and similar business perks — deductor must ensure tax is paid even where the benefit is wholly in kind (may require the recipient to pay the tax portion in cash first)."
+    ],
+    "keywords": "perquisite benefit in kind business gift freebie sponsored trip"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "E-commerce operator's payment to a seller",
+    "oldSection": "194-O",
+    "newSection": "393(1) Sl.8(v)",
+    "desc": "TDS by an e-commerce operator (Amazon, Flipkart, etc.) on gross sale/service value facilitated for a resident seller.",
+    "variants": [
+      {
+        "condition": "Individual/HUF seller",
+        "code": "1035",
+        "rate": "0.1%",
+        "threshold": "₹5 lakh/yr"
+      },
+      {
+        "condition": "Any other seller (company, firm, etc.)",
+        "code": "1035",
+        "rate": "0.1%",
+        "threshold": "No threshold"
+      }
+    ],
+    "noPan": "5%",
+    "notes": [
+      "Cut from 1% to 0.1% on 1 Oct 2024 — carried forward, not a 2026 change."
+    ],
+    "keywords": "ecommerce e-commerce amazon flipkart seller marketplace"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Transfer of virtual digital asset (crypto / NFT)",
+    "oldSection": "194S",
+    "newSection": "393(1) Sl.8(vi)",
+    "desc": "Consideration for transfer of a virtual digital asset, deducted by the payer.",
+    "variants": [
+      {
+        "condition": "General payer",
+        "code": "1037",
+        "rate": "1%",
+        "threshold": "₹10,000/yr"
+      },
+      {
+        "condition": "Specified person (individual/HUF with no business income, or turnover below tax-audit limits)",
+        "code": "1037",
+        "rate": "1%",
+        "threshold": "₹50,000/yr"
+      }
+    ],
+    "noPan": "20% (can also go up to 30% under specific anti-avoidance readings — verify current CBDT guidance)",
+    "notes": [
+      "No set-off of losses on one VDA against gains on another is allowed at the income-tax computation stage — a separate rule from this TDS provision, but relevant to the same transaction."
+    ],
+    "keywords": "crypto cryptocurrency vda virtual digital asset bitcoin nft"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Repayment under National Savings Scheme",
+    "oldSection": "194EE",
+    "newSection": "393(1)",
+    "desc": "Amount paid on closure/withdrawal of deposits under the (legacy) National Savings Scheme.",
+    "variants": [
+      {
+        "condition": "Any depositor",
+        "code": "Pending CBDT code",
+        "rate": "10%",
+        "threshold": "₹2,500"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Relevant only to legacy NSS accounts opened before the scheme's discontinuation for new deposits."
+    ],
+    "keywords": "nss national savings scheme deposit withdrawal"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Repurchase of units by Mutual Fund / UTI",
+    "oldSection": "194F",
+    "newSection": "— (withdrawn)",
+    "desc": "Formerly covered repurchase of units under Sec 80CCB schemes.",
+    "variants": [
+      {
+        "condition": "—",
+        "code": "Discontinued",
+        "rate": "Not applicable",
+        "threshold": "—"
+      }
+    ],
+    "notes": [
+      "Withdrawn with effect from 1 October 2024. No successor provision under the new Act — listed for reference only, so it isn't mistaken for a still-active section."
+    ],
+    "keywords": "mutual fund repurchase units uti discontinued withdrawn"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Commission on sale of lottery tickets",
+    "oldSection": "194G",
+    "newSection": "393(1)",
+    "desc": "Commission, remuneration or prize paid on stocking, distributing, purchasing or selling lottery tickets.",
+    "variants": [
+      {
+        "condition": "Any resident payee",
+        "code": "Pending CBDT code",
+        "rate": "2%",
+        "threshold": "₹20,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Cut from 5% to 2% on 1 Oct 2024 — carried forward, not a 2026 change.",
+      "Threshold raised from ₹15,000 to ₹20,000 by Budget 2025."
+    ],
+    "keywords": "lottery ticket commission agent seller distributor"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Compensation on compulsory acquisition of immovable property",
+    "oldSection": "194LA",
+    "newSection": "393(1)",
+    "desc": "Compensation (including enhanced compensation) paid on compulsory acquisition of immovable property, other than rural agricultural land.",
+    "variants": [
+      {
+        "condition": "Any resident payee",
+        "code": "Pending CBDT code",
+        "rate": "10%",
+        "threshold": "₹5,00,000/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Compensation for compulsory acquisition of agricultural land itself remains exempt from tax and hence from TDS.",
+      "Threshold raised from ₹2,50,000 to ₹5,00,000 by Budget 2025."
+    ],
+    "keywords": "compulsory acquisition compensation immovable property land government enhanced"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Distribution by a business trust (REIT/InvIT) to unit holders",
+    "oldSection": "194LBA",
+    "newSection": "393(1)",
+    "desc": "Interest, rental income, or dividend component distributed by a business trust to its unit holders.",
+    "variants": [
+      {
+        "condition": "Interest component — resident unit holder",
+        "rate": "10%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Rental income component — resident unit holder",
+        "rate": "10%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Dividend component (where SPV opted out of concessional regime) — resident unit holder",
+        "rate": "10%",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "noPan": "20%",
+    "notes": [
+      "Non-resident unit holders are taxed under the Sec 393(2) non-resident table instead, generally at 5% for interest and other specified rates by income type — confirm the exact sub-rate for the income head before deducting."
+    ],
+    "keywords": "business trust reit invit unit holder distribution interest rental dividend"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Income from units of an investment fund (Category I/II AIF)",
+    "oldSection": "194LBB",
+    "newSection": "393(1)",
+    "desc": "Income (other than exempt business income) paid by an investment fund to its unit holders.",
+    "variants": [
+      {
+        "condition": "Resident unit holder",
+        "rate": "10%",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "noPan": "20%",
+    "notes": [
+      "Non-resident unit holders: rate in force under the applicable head, subject to DTAA."
+    ],
+    "keywords": "investment fund aif income unit holder category I II"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Income from investment in a securitisation trust",
+    "oldSection": "194LBC",
+    "newSection": "393(1)",
+    "desc": "Income paid by a securitisation trust to its investors.",
+    "variants": [
+      {
+        "condition": "Individual or HUF investor",
+        "rate": "10%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Any other investor",
+        "rate": "10%",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "noPan": "20%",
+    "notes": [
+      "Unified to a flat 10% for all investor types by Budget 2025 — previously 25% (individual/HUF) and 30% (others)."
+    ],
+    "keywords": "securitisation trust investment income"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "Payment by an individual/HUF not otherwise liable to deduct, to contractors/professionals/commission agents",
+    "oldSection": "194M",
+    "newSection": "393(1)",
+    "desc": "Contract, professional fee, brokerage or commission payments made by an individual/HUF who is below the 194C/194H/194J turnover threshold and so wouldn't otherwise deduct at all.",
+    "variants": [
+      {
+        "condition": "Individual/HUF payer below the specified-person threshold",
+        "code": "Pending CBDT code",
+        "rate": "2%",
+        "threshold": "₹50 lakh aggregate/yr"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Exists specifically to catch high-value contractor/professional/commission payments by individuals/HUFs (e.g. a large home-renovation contract) who fall outside 194C/194H/194J because their own turnover is below the audit threshold.",
+      "Cut from 5% to 2% on 1 Oct 2024 — carried forward, not a 2026 change."
+    ],
+    "keywords": "individual huf payment contractor professional commission not liable"
+  },
+  {
+    "cat": "Resident payments",
+    "nature": "TDS by specified bank for senior citizens aged 75+ (ITR-filing exemption)",
+    "oldSection": "194P",
+    "newSection": "393(1)",
+    "desc": "A facilitation provision, not a separate income head: a specified bank computes and deducts the FULL final tax liability of a senior citizen (75+) whose only income is pension and interest from that same bank, so the senior citizen need not file an ITR at all.",
+    "variants": [
+      {
+        "condition": "Senior citizen 75+, income limited to pension + interest from the same specified bank",
+        "code": "Pending CBDT code",
+        "rate": "Slab rate (computed by the bank after all eligible deductions)",
+        "threshold": "No threshold — this is a computation mechanism, not a payment-triggered deduction"
+      }
+    ],
+    "notes": [
+      "Only applies where the senior citizen has furnished a declaration to the bank; if other income exists (rent, capital gains, etc.), this section doesn't apply and normal ITR filing is required."
+    ],
+    "keywords": "senior citizen 75 pension bank itr exemption declaration"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Income of a non-resident sportsman or sports association / entertainer",
+    "oldSection": "194E",
+    "newSection": "393(2) Sl.1",
+    "desc": "Income from participation in India (match fees, advertisement, contribution of articles) by a non-resident sportsman, sports association, or entertainer.",
+    "variants": [
+      {
+        "condition": "Non-resident sportsman/entertainer/association",
+        "code": "1039",
+        "rate": "20%",
+        "threshold": "No threshold"
+      }
+    ],
+    "notes": [
+      "Plus applicable surcharge and cess. DTAA rate may apply if beneficial, subject to TRC/Form 10F."
+    ],
+    "keywords": "non resident sportsman entertainer foreign athlete association"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Interest from an Infrastructure Debt Fund",
+    "oldSection": "194LB",
+    "newSection": "393(2) Sl.5",
+    "desc": "Interest paid by a notified Infrastructure Debt Fund to a non-resident.",
+    "variants": [
+      {
+        "condition": "Non-resident",
+        "code": "1044",
+        "rate": "5%",
+        "threshold": "No threshold"
+      }
+    ],
+    "keywords": "infrastructure debt fund interest non resident idf"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Interest paid by an Indian company/business trust in foreign currency (ECBs, masala bonds)",
+    "oldSection": "194LC",
+    "newSection": "393(2)",
+    "desc": "Interest on borrowings under a loan agreement, or on long-term bonds/rupee-denominated bonds, issued by an Indian company to a non-resident, in foreign currency.",
+    "variants": [
+      {
+        "condition": "General foreign-currency loan/bond",
+        "rate": "5%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Certain notified long-term bonds/rupee-denominated bonds listed on a recognised stock exchange (incl. IFSC)",
+        "rate": "4%",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "notes": [
+      "Borrowing must be approved by the Central Government and within the specified period to qualify for the concessional rate."
+    ],
+    "keywords": "ecb external commercial borrowing masala bonds foreign currency loan non resident"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Interest on rupee-denominated bonds/Government securities paid to FII/QFI",
+    "oldSection": "194LD",
+    "newSection": "393(2)",
+    "desc": "Interest on rupee-denominated bonds of an Indian company or Government securities, paid to a Foreign Institutional Investor or Qualified Foreign Investor.",
+    "variants": [
+      {
+        "condition": "FII/QFI",
+        "rate": "5%",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "notes": [
+      "Concessional rate is time-bound to interest payable up to specified dates notified from time to time — verify the current sunset date before relying on it."
+    ],
+    "keywords": "fii qfi rupee denominated bonds government securities interest"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Income from units of a mutual fund/UTI paid to a non-resident",
+    "oldSection": "196A",
+    "newSection": "393(2)",
+    "desc": "Income (other than capital gains) from mutual fund/UTI units, paid to a non-resident (not being a company) or a foreign company.",
+    "variants": [
+      {
+        "condition": "Non-resident unit holder",
+        "rate": "20% (or DTAA rate, if lower)",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "keywords": "mutual fund uti income non resident units"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Income from units of an offshore fund",
+    "oldSection": "196B",
+    "newSection": "393(2)",
+    "desc": "Income (including long-term capital gains) from units purchased in foreign currency by an offshore fund.",
+    "variants": [
+      {
+        "condition": "Offshore fund",
+        "rate": "10%",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "keywords": "offshore fund income units non resident"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Income from foreign currency bonds or GDRs of an Indian company",
+    "oldSection": "196C",
+    "newSection": "393(2)",
+    "desc": "Income and long-term capital gains from foreign currency bonds or Global Depository Receipts of an Indian company, purchased in foreign currency.",
+    "variants": [
+      {
+        "condition": "Non-resident investor",
+        "rate": "10%",
+        "threshold": "No threshold"
+      }
+    ],
+    "code": "Pending CBDT code",
+    "keywords": "gdr global depository receipts foreign currency bonds non resident"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Income of Foreign Institutional Investors from securities",
+    "oldSection": "196D",
+    "newSection": "393(2) Sl.15",
+    "desc": "Income (other than dividend income and capital gains) from securities, paid to an FII.",
+    "variants": [
+      {
+        "condition": "FII",
+        "code": "1055",
+        "rate": "20%",
+        "threshold": "No threshold"
+      }
+    ],
+    "notes": [
+      "Subject to lower DTAA rate where a valid Tax Residency Certificate and Form 10F are on file."
+    ],
+    "keywords": "fii foreign institutional investor securities income"
+  },
+  {
+    "cat": "Non-resident payments",
+    "nature": "Any other payment to a non-resident (incl. royalty, technical fees, business income)",
+    "oldSection": "195",
+    "newSection": "393(2) Sl.17",
+    "desc": "Catch-all provision: any sum (other than salary) payable to a non-resident or foreign company that is chargeable to tax in India, and not covered by a more specific section above.",
+    "variants": [
+      {
+        "condition": "Non-resident/foreign company payee",
+        "code": "1057",
+        "rate": "20% (or DTAA rate, whichever lower)",
+        "threshold": "No threshold"
+      }
+    ],
+    "noPan": "20% or higher (Sec 397(2) no-PAN rule applies on top of the computed rate)",
+    "notes": [
+      "DTAA rate needs a valid Tax Residency Certificate and Form 10F on file before it can be applied — the lower rate isn't automatic on the strength of a claim alone.",
+      "Surcharge and cess apply in addition to the base rate.",
+      "Payer must file Form 15CA/15CB (or successor forms under the new Act) before remitting, for most payments in this category."
+    ],
+    "keywords": "foreign payment non resident royalty technical fees dtaa consultant abroad 15ca 15cb"
+  },
+  {
+    "cat": "Winnings / cash / partners",
+    "nature": "Winnings from lottery, crossword puzzle, card game or other games of gambling/betting",
+    "oldSection": "194B",
+    "newSection": "393(3) Sl.1",
+    "desc": "Winnings from lotteries, crosswords, card games and similar games (excluding online games, which fall under 194BA).",
+    "variants": [
+      {
+        "condition": "Any winner",
+        "code": "1058",
+        "rate": "30%",
+        "threshold": "₹10,000 per single winning"
+      }
+    ],
+    "notes": [
+      "Flat rate — no slab benefit or basic exemption applies.",
+      "Where winnings are wholly/partly in kind, the distributor must ensure tax is paid before releasing the prize."
+    ],
+    "keywords": "lottery gambling crossword winnings prize card game"
+  },
+  {
+    "cat": "Winnings / cash / partners",
+    "nature": "Winnings from online games",
+    "oldSection": "194BA",
+    "newSection": "393(3) Sl.2",
+    "desc": "Net winnings from any online game (including real-money gaming, fantasy sports).",
+    "variants": [
+      {
+        "condition": "Any player",
+        "code": "1060",
+        "rate": "30%",
+        "threshold": "No threshold"
+      }
+    ],
+    "notes": [
+      "Deducted on NET winnings at the time of withdrawal, and again on the remaining balance at year-end if not already taxed.",
+      "No basic exemption — unlike 194B, tax applies from the first rupee of net winnings."
+    ],
+    "keywords": "online game winnings gaming rummy fantasy real money"
+  },
+  {
+    "cat": "Winnings / cash / partners",
+    "nature": "Winnings from horse races",
+    "oldSection": "194BB",
+    "newSection": "393(3) Sl.3",
+    "desc": "Winnings from any horse race run on a licensed racecourse.",
+    "variants": [
+      {
+        "condition": "Any winner",
+        "code": "1062",
+        "rate": "30%",
+        "threshold": "₹10,000 per single winning"
+      }
+    ],
+    "keywords": "horse race winnings betting racecourse"
+  },
+  {
+    "cat": "Winnings / cash / partners",
+    "nature": "Cash withdrawal from a bank/post office account",
+    "oldSection": "194N",
+    "newSection": "393(3) Sl.5",
+    "desc": "TDS on cash withdrawals exceeding specified limits from one or more accounts with a bank, co-operative bank or post office.",
+    "variants": [
+      {
+        "condition": "Recipient has filed ITR in all of the preceding 3 years",
+        "code": "1064/1065",
+        "rate": "2%",
+        "threshold": "₹1 crore/yr from a single payer (₹3 crore/yr for co-operative societies withdrawing for banking business)"
+      },
+      {
+        "condition": "Recipient has NOT filed ITR for any of the preceding 3 years",
+        "code": "Pending CBDT code",
+        "rate": "2% on withdrawals between ₹20 lakh–₹1 crore; 5% above ₹1 crore",
+        "threshold": "₹20 lakh/yr"
+      }
+    ],
+    "notes": [
+      "'Co-operative society engaged in banking business' gets the higher ₹3 crore threshold; all other recipients (including individuals) get ₹1 crore.",
+      "Government, banks and certain other notified recipients are excluded from this section entirely."
+    ],
+    "keywords": "cash withdrawal bank account individual co-operative non filer itr higher rate"
+  },
+  {
+    "cat": "Winnings / cash / partners",
+    "nature": "Partner's salary, remuneration, commission, bonus or interest from a firm/LLP",
+    "oldSection": "194T",
+    "newSection": "393(3) Sl.7",
+    "desc": "Any salary, remuneration, commission, bonus or interest credited/paid by a partnership firm or LLP to its partner.",
+    "variants": [
+      {
+        "condition": "Any partner",
+        "code": "1067",
+        "rate": "10%",
+        "threshold": "₹20,000/yr (aggregate across all these heads)"
+      }
+    ],
+    "noPan": "20%",
+    "notes": [
+      "Applies to every firm and LLP — no turnover or audit threshold exemption.",
+      "Triggers on CREDIT to the partner's account, even without any cash payment — a journal entry is enough.",
+      "In force since 1 April 2025 (Finance (No. 2) Act, 2024) — this is its second year, not a 2026 introduction.",
+      "Pure profit-share distribution to a partner is NOT covered — only these four specific heads are."
+    ],
+    "keywords": "partner salary remuneration commission interest llp firm 194t bonus"
+  },
+  {
+    "cat": "TCS",
+    "nature": "Sale of specified goods (liquor, forest produce, tendu leaves, minerals, scrap)",
+    "oldSection": "206C(1)",
+    "newSection": "394(1) Sl.1–4",
+    "desc": "TCS collected by the seller from the buyer at the time of debiting/receipt, on sale of these specific categories of goods.",
+    "variants": [
+      {
+        "condition": "Alcoholic liquor for human consumption",
+        "code": "1068",
+        "rate": "2% (↑ from 1%, FY 2026-27)",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Timber obtained under a forest lease",
+        "code": "Pending CBDT code",
+        "rate": "2%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Timber obtained by any other mode (not a forest lease)",
+        "code": "Pending CBDT code",
+        "rate": "2%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Any other forest produce (not timber or tendu leaves)",
+        "code": "Pending CBDT code",
+        "rate": "2%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Tendu leaves",
+        "code": "1069",
+        "rate": "2%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Minerals — coal, lignite or iron ore (sale to a trader)",
+        "code": "Pending CBDT code",
+        "rate": "1%",
+        "threshold": "No threshold"
+      },
+      {
+        "condition": "Scrap",
+        "code": "1073",
+        "rate": "2% (↑ from 1%, FY 2026-27)",
+        "threshold": "No threshold"
+      }
+    ],
+    "notes": [
+      "Only the liquor and scrap rates actually changed for FY 2026-27 (both 1%→2%); timber/forest-produce rates were separately cut from 2.5% to 2% back in Budget 2025, effective 1 Apr 2025.",
+      "Minerals TCS applies only on sale to a trader — not where the buyer uses it for further processing or power generation."
+    ],
+    "keywords": "tcs liquor alcohol timber forest tendu leaves minerals coal lignite iron ore scrap sale"
+  },
+  {
+    "cat": "TCS",
+    "nature": "Grant of lease/licence — parking lot, toll plaza, or mining/quarrying rights",
+    "oldSection": "206C(1C)",
+    "newSection": "394(1)",
+    "desc": "TCS on the grant of a lease or licence for a parking lot, toll plaza, or a mine/quarry (other than mineral oil, petroleum and natural gas).",
+    "variants": [
+      {
+        "condition": "Any licensee/lessee",
+        "code": "Pending CBDT code",
+        "rate": "2%",
+        "threshold": "No threshold"
+      }
+    ],
+    "notes": [
+      "Excludes mining/quarrying of mineral oil, petroleum and natural gas — those are outside this section."
+    ],
+    "keywords": "tcs parking lot toll plaza mining quarrying lease license"
+  },
+  {
+    "cat": "TCS",
+    "nature": "Sale of a motor vehicle or notified luxury goods",
+    "oldSection": "206C(1F)",
+    "newSection": "394(1) Sl.6",
+    "desc": "TCS on high-value sale of a motor vehicle, or of notified luxury goods, to any buyer.",
+    "variants": [
+      {
+        "condition": "Motor vehicle",
+        "code": "1075",
+        "rate": "1%",
+        "threshold": "₹10 lakh"
+      },
+      {
+        "condition": "Notified luxury goods (watches, art pieces, yachts, sunglasses, handbags/shoes, home theatre systems, polo horses, etc.)",
+        "code": "1076–1085",
+        "rate": "1%",
+        "threshold": "₹10 lakh per item"
+      }
+    ],
+    "notes": [
+      "Luxury-goods list is CBDT-notified and item-specific — check the current notification for what's covered before assuming a category is included."
+    ],
+    "keywords": "tcs motor vehicle car sale luxury watch art yacht bag sunglasses"
+  },
+  {
+    "cat": "TCS",
+    "nature": "Remittance under the Liberalised Remittance Scheme (LRS) / overseas tour packages",
+    "oldSection": "206C(1G)",
+    "newSection": "394(1) Sl.7–8",
+    "desc": "TCS collected by an authorised dealer on foreign remittance under LRS, or by a seller of an overseas tour package.",
+    "variants": [
+      {
+        "condition": "LRS remittance for education or medical treatment",
+        "code": "1086",
+        "rate": "2% (Nil if funded entirely by an education loan from a specified financial institution)",
+        "threshold": "₹10 lakh/yr"
+      },
+      {
+        "condition": "LRS remittance for any other purpose",
+        "code": "1087",
+        "rate": "20%",
+        "threshold": "₹10 lakh/yr"
+      },
+      {
+        "condition": "Overseas tour package",
+        "code": "1088",
+        "rate": "2% up to ₹10 lakh; 5% above ₹10 lakh (if PAN missing or no ITR-filing link)",
+        "threshold": "No minimum for the base 2% rate"
+      }
+    ],
+    "noPan": "Twice the applicable rate, or 5%, whichever is higher",
+    "notes": [
+      "Threshold raised from ₹7 lakh to ₹10 lakh by Budget 2025.",
+      "The 'other purposes' rate (20%) is a sharp jump from the education/medical rate — classify the purpose carefully before remitting."
+    ],
+    "keywords": "tcs lrs foreign remittance education medical abroad tour package other purpose investment"
+  },
+  {
+    "cat": "TCS",
+    "nature": "Sale of goods (general) — WITHDRAWN",
+    "oldSection": "206C(1H)",
+    "newSection": "— (withdrawn)",
+    "desc": "Formerly required TCS at 0.1% on sale of goods exceeding ₹50 lakh to one buyer in a year.",
+    "variants": [
+      {
+        "condition": "—",
+        "code": "Discontinued",
+        "rate": "Not applicable",
+        "threshold": "—"
+      }
+    ],
+    "notes": [
+      "Withdrawn with effect from 1 April 2025 — fully subsumed into buyer-side TDS under Sec 194Q (Code 1031).",
+      "Kept here for reference only, so a seller doesn't mistakenly try to collect both TCS (old 206C(1H)) and let the buyer also deduct TDS (194Q) on the same sale."
+    ],
+    "keywords": "tcs sale of goods general discontinued withdrawn"
+  }
+]
