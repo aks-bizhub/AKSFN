@@ -1,0 +1,17 @@
+[
+  {
+    "title": "TDS",
+    "description": "Tax Deducted at Source — sections, rates & returns",
+    "file": "tds/index.html"
+  },
+  {
+    "title": "Advance Tax",
+    "description": "Instalments, due dates & interest computation",
+    "file": "advance-tax/index.html"
+  },
+  {
+    "title": "Other",
+    "description": "Miscellaneous income tax topics",
+    "file": "other/index.html"
+  }
+]
