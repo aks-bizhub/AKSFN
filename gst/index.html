@@ -2,179 +2,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reverse Charge Mechanism (RCM) under GST — Detailed Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GST</title>
 <style>
-:root{--red:#C0392B;--blue:#2E86C1;--ink:#1b1f23;--sub:#5a6470;--bg:#fff;--card:#f7f9fb;--line:#e3e8ee;}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5;}
-.wrap{max-width:920px;margin:0 auto;padding:2rem 1.2rem 4rem;}
-header{border-bottom:3px solid var(--red);padding-bottom:1rem;margin-bottom:1.2rem;}
-.brand{font-size:.78rem;letter-spacing:.02em;color:var(--blue);font-weight:700;}
-h1{font-size:1.7rem;margin:.3rem 0 .2rem;}
-.tag{color:var(--sub);font-size:.9rem;}
-
-.searchbox{display:flex;align-items:center;gap:.5rem;background:var(--card);border:1px solid var(--line);
-  border-radius:8px;padding:.6rem .9rem;margin:1rem 0 .6rem;position:sticky;top:0;z-index:5;}
-.searchbox input{flex:1;border:none;background:transparent;font-size:1rem;color:var(--ink);outline:none;}
-.searchbox svg{flex-shrink:0;color:var(--sub);}
-.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:.4rem 0 1rem;}
-.chip{border:1px solid var(--line);background:var(--bg);color:var(--sub);font-size:.78rem;
-  padding:.25rem .65rem;border-radius:999px;cursor:pointer;}
-.chip.active{background:var(--blue);color:#fff;border-color:var(--blue);}
-.count{font-size:.78rem;color:var(--sub);margin-bottom:.6rem;}
-
-.cat{margin:1.6rem 0;}
-.cat-head{display:flex;align-items:baseline;gap:.6rem;border-left:4px solid var(--red);padding-left:.6rem;}
-.cat-head h2{font-size:1.05rem;margin:0;color:var(--red);}
-.cat-badge{font-size:.7rem;background:var(--card);color:var(--sub);padding:.1rem .5rem;border-radius:999px;}
-.intro{color:var(--sub);font-size:.86rem;margin:.4rem 0 .8rem;max-width:70ch;}
-
-.scenario{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;margin:.6rem 0;}
-.scenario-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
-.scenario-title{font-weight:700;font-size:.92rem;}
-.mech{font-size:.72rem;font-weight:700;padding:.15rem .55rem;border-radius:999px;letter-spacing:.02em;}
-.mech-rcm{background:#fbe4e1;color:var(--red);}
-.mech-fc{background:#dcedf9;color:var(--blue);}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;font-size:.85rem;}
-.grid div span{display:block;color:var(--sub);font-size:.72rem;text-transform:uppercase;letter-spacing:.02em;margin-bottom:.1rem;}
-.notes{font-size:.82rem;color:var(--sub);margin-top:.5rem;border-top:1px dashed var(--line);padding-top:.4rem;}
-.exempt-note{font-size:.82rem;color:var(--sub);background:#eef6fb;border-left:4px solid var(--blue);padding:.5rem .7rem;margin-top:.6rem;border-radius:0 6px 6px 0;}
-
-.hl{background:#fde9c8;padding:0 1px;border-radius:2px;}
-.empty{color:var(--sub);font-size:.9rem;padding:1.2rem 0;}
-footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.76rem;color:var(--sub);}
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){--bg:#15171a;--ink:#e8eaed;--sub:#9aa4af;--card:#1e2126;--line:#2b2f35;}
-  .mech-rcm{background:#3a1f1c;} .mech-fc{background:#17303f;} .hl{background:#5a4420;color:#fff;}
-}
-:root[data-theme="dark"]{--bg:#15171a;--ink:#e8eaed;--sub:#9aa4af;--card:#1e2126;--line:#2b2f35;}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; min-height: 100vh; padding: 40px 20px; }
+  .container { max-width: 640px; margin: 0 auto; }
+  .back { display: inline-block; margin-bottom: 20px; font-size: 13px; color: #2E86C1; text-decoration: none; }
+  h1 { color: #1a1a2e; font-size: 24px; margin-bottom: 6px; }
+  p.subtitle { color: #6b7280; font-size: 14px; margin-bottom: 28px; }
+  .list { display: flex; flex-direction: column; gap: 12px; }
+  .item { display: block; background: #ffffff; border-radius: 10px; padding: 16px 20px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.06); border-left: 4px solid #C0392B; }
+  .item:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+  .item h3 { font-size: 15px; color: #1a1a2e; margin-bottom: 3px; }
+  .item p { font-size: 12.5px; color: #6b7280; }
+  .empty { text-align: center; color: #9ca3af; font-size: 13px; padding: 30px 0; }
+  footer { text-align: center; margin-top: 36px; font-size: 12px; color: #9ca3af; }
 </style>
-  <a class="back" href="../index.html">&larr; Back to Income Tax</a>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <div class="brand">AKS FINSIGHT NEXUS</div>
-  <h1>Reverse Charge Mechanism (RCM) under GST</h1>
-  <div class="tag">Category-wise, scenario-by-scenario reference — data loaded from data.json</div>
-</header>
-
-<div class="searchbox">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-  <input id="q" type="text" placeholder="Search e.g. 'GTA', 'director', 'renting', 'import'…" autocomplete="off">
-</div>
-<div class="chips" id="chips">
-  <span class="chip active" data-f="all">All</span>
-  <span class="chip" data-f="goods">Goods</span>
-  <span class="chip" data-f="services">Services</span>
-</div>
-<div class="count" id="count"></div>
-
-<div id="results"></div>
-<div class="empty" id="empty" style="display:none">No matching entries. Try a different keyword.</div>
-
-<footer>Prepared by CA Amit Singh — AKS FinSight Nexus. Reflects CGST/IGST Acts and notifications as amended up to preparation date; cross-check the latest Council notifications before relying on any entry.</footer>
-</div>
-
+  <div class="container">
+    <a class="back" href="../index.html">&larr; Back to AKS FinSight Nexus</a>
+    <h1>GST</h1>
+    <p class="subtitle">Compliance, returns &amp; reference notes</p>
+    <div class="list" id="list"><p class="empty">Loading…</p></div>
+    <footer>CA Amit Singh · AKS FinSight Nexus</footer>
+  </div>
 <script>
-let DATA = {goods:[], services:[]};
-let activeFilter = 'all';
-const resultsEl = document.getElementById('results');
-const emptyEl = document.getElementById('empty');
-const countEl = document.getElementById('count');
-const input = document.getElementById('q');
-
-function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function hl(text,q){
-  if(!q) return esc(text);
-  const i = String(text).toLowerCase().indexOf(q.toLowerCase());
-  if(i===-1) return esc(text);
-  return esc(text.slice(0,i))+'<span class="hl">'+esc(text.slice(i,i+q.length))+'</span>'+esc(text.slice(i+q.length));
-}
-function matches(obj,q){
-  if(!q) return true;
-  return JSON.stringify(obj).toLowerCase().includes(q.toLowerCase());
-}
-
-function renderGoods(cats, q){
-  let html='';
-  let shown=0;
-  cats.forEach(cat=>{
-    const items = cat.items.filter(it=>matches(it,q));
-    if(!items.length) return;
-    shown += items.length;
-    html += `<div class="cat"><div class="cat-head"><h2>${esc(cat.category)}</h2><span class="cat-badge">Goods · ${items.length}</span></div>`;
-    items.forEach(it=>{
-      html += `<div class="scenario">
-        <div class="scenario-top"><span class="scenario-title">${hl(it.item,q)}</span><span class="mech mech-rcm">RCM</span></div>
-        <div class="grid">
-          <div><span>Supplier</span>${hl(it.supplier,q)}</div>
-          <div><span>Recipient (pays RCM)</span>${hl(it.recipient,q)}</div>
-          <div><span>Rate</span>${hl(it.rate||'—',q)}</div>
-        </div>
-      </div>`;
-    });
-    html += `</div>`;
-  });
-  return {html, shown};
-}
-
-function renderServices(cats, q){
-  let html='';
-  let shown=0;
-  cats.forEach(cat=>{
-    const scenarios = (cat.scenarios||[]).filter(s=>matches(s,q) || matches(cat.category,q));
-    if(!scenarios.length) return;
-    shown += scenarios.length;
-    html += `<div class="cat"><div class="cat-head"><h2>${esc(cat.category)}</h2><span class="cat-badge">Services · ${scenarios.length} option${scenarios.length>1?'s':''}</span></div>`;
-    if(cat.intro) html += `<div class="intro">${esc(cat.intro)}</div>`;
-    scenarios.forEach(s=>{
-      const mechClass = s.mechanism==='RCM' ? 'mech-rcm' : 'mech-fc';
-      html += `<div class="scenario">
-        <div class="scenario-top"><span class="scenario-title">${hl(s.option,q)}</span><span class="mech ${mechClass}">${esc(s.mechanism)}</span></div>
-        <div class="grid">
-          <div><span>Supplier</span>${hl(s.supplier,q)}</div>
-          <div><span>Recipient</span>${hl(s.recipient,q)}</div>
-          <div><span>Rate</span>${hl(s.rate||'—',q)}</div>
-          <div><span>ITC</span>${hl(s.itc||'—',q)}</div>
-        </div>
-        ${s.notes ? `<div class="notes">${hl(s.notes,q)}</div>` : ''}
-      </div>`;
-    });
-    if(cat.exempt_note) html += `<div class="exempt-note">${esc(cat.exempt_note)}</div>`;
-    html += `</div>`;
-  });
-  return {html, shown};
-}
-
-function render(){
-  const q = input.value.trim();
-  let html='', total=0;
-  if(activeFilter==='all' || activeFilter==='goods'){
-    const r = renderGoods(DATA.goods, q); html+=r.html; total+=r.shown;
-  }
-  if(activeFilter==='all' || activeFilter==='services'){
-    const r = renderServices(DATA.services, q); html+=r.html; total+=r.shown;
-  }
-  resultsEl.innerHTML = html;
-  emptyEl.style.display = total ? 'none' : 'block';
-  countEl.textContent = total + ' matching entr' + (total===1?'y':'ies');
-}
-
-input.addEventListener('input', render);
-document.querySelectorAll('#chips .chip').forEach(c=>{
-  c.addEventListener('click', ()=>{
-    document.querySelectorAll('#chips .chip').forEach(x=>x.classList.remove('active'));
-    c.classList.add('active');
-    activeFilter = c.dataset.f;
-    render();
-  });
-});
-
-DATA = {"goods": [{"category": "Agricultural Produce", "items": [{"item": "Cashew nuts (not shelled/peeled)", "supplier": "Agriculturist", "recipient": "Any registered person", "rate": "5%"}, {"item": "Bidi wrapper leaves (tendu)", "supplier": "Agriculturist", "recipient": "Any registered person", "rate": "18%"}, {"item": "Tobacco leaves", "supplier": "Agriculturist", "recipient": "Any registered person", "rate": "5%"}, {"item": "Raw cotton", "supplier": "Agriculturist", "recipient": "Any registered person", "rate": "5%"}]}, {"category": "Manufactured / Processed Goods", "items": [{"item": "Silk yarn", "supplier": "Manufacturer from raw silk/cocoons", "recipient": "Any registered person", "rate": "5%"}]}, {"category": "Government-Sourced Goods", "items": [{"item": "Supply of lottery", "supplier": "State Govt/UT/local authority", "recipient": "Lottery distributor/selling agent", "rate": "12%/28% (based on lottery type)"}, {"item": "Used vehicles, seized/confiscated goods, old & used goods, waste and scrap", "supplier": "Central/State Govt, local authority", "recipient": "Any registered person", "rate": "As applicable to goods"}]}, {"category": "Financial Goods", "items": [{"item": "Priority Sector Lending Certificate", "supplier": "Any registered person", "recipient": "Any registered person", "rate": "12%"}]}, {"category": "Metal Scrap (w.e.f. 10-Oct-2024)", "items": [{"item": "Metal scrap (Chapters 72–81)", "supplier": "Any unregistered person", "recipient": "Any registered person", "rate": "As applicable"}]}], "services": [{"category": "Goods Transport Agency (GTA) — Transporter", "intro": "A GTA has three possible options on the same freight transaction — the option actually exercised decides who pays and whether ITC flows.", "scenarios": [{"option": "Option 1 — GTA opts forward charge, concessional rate", "mechanism": "Forward Charge", "supplier": "GTA (registered, has exercised the annual option)", "recipient": "Any recipient", "rate": "5%", "itc": "GTA cannot claim ITC on inputs used for this supply", "notes": "GTA collects and pays tax itself; recipient pays GTA the invoice amount including GST."}, {"option": "Option 2 — GTA opts forward charge, regular rate", "mechanism": "Forward Charge", "supplier": "GTA (registered, has exercised the annual option)", "recipient": "Any recipient", "rate": "12%", "itc": "GTA can claim full ITC on inputs", "notes": "Chosen when the GTA wants to pass on ITC benefit / claim its own ITC."}, {"option": "Option 3 — GTA has not opted for forward charge (default)", "mechanism": "RCM", "supplier": "GTA", "recipient": "Factory, society, registered person, body corporate, partnership firm, casual taxable person, or any person registered under GST", "rate": "5%", "itc": "ITC available to the recipient who pays the RCM tax", "notes": "This is the default position unless the GTA has filed the forward-charge option (Annexure V) for the financial year."}], "exempt_note": "GTA services to unregistered individuals (for personal use) and specified exempt categories (e.g. agricultural produce, milk, salt, relief materials, single consignment freight below ₹1,500) are outside GST altogether."}, {"category": "Renting of Motor Vehicle (Passenger Transport)", "intro": "Two rate structures exist for the same service, and RCM applies only in one of them.", "scenarios": [{"option": "Option 1 — Supplier charges concessional rate, no ITC", "mechanism": "RCM", "supplier": "Any person other than a body corporate, paying GST at 5% (no ITC)", "recipient": "Body corporate", "rate": "5%", "itc": "ITC available to recipient body corporate on the RCM tax paid", "notes": "Most common case — small operators/individual owners renting vehicles to companies."}, {"option": "Option 2 — Supplier charges regular rate, with ITC", "mechanism": "Forward Charge", "supplier": "Any person charging GST at 12% (claiming full ITC)", "recipient": "Any recipient", "rate": "12%", "itc": "Supplier claims own ITC; no RCM applies", "notes": "RCM does not apply once the supplier has opted to charge 12% with ITC."}]}, {"category": "Security Services (Supply of Manpower)", "intro": "RCM applies only when the supplier is not a body corporate; the recipient's status also matters.", "scenarios": [{"option": "Standard case — non-body-corporate security agency", "mechanism": "RCM", "supplier": "Any person other than a body corporate (e.g. proprietorship, partnership security agency)", "recipient": "Registered person", "rate": "18%", "itc": "Available to recipient", "notes": "Excludes Government departments and composition dealers as recipients — for them, forward charge applies instead."}, {"option": "Exception — supplier is a body corporate", "mechanism": "Forward Charge", "supplier": "Body corporate security agency", "recipient": "Any recipient", "rate": "18%", "itc": "Available to recipient in the normal course", "notes": "RCM notification specifically excludes body corporate suppliers."}]}, {"category": "Legal Services", "scenarios": [{"option": "Standard case", "mechanism": "RCM", "supplier": "Individual advocate, senior advocate, or firm of advocates", "recipient": "Any business entity with turnover above the applicable threshold", "rate": "18%", "itc": "Available to recipient", "notes": "Services to non-business individuals, or to entities below threshold, are exempt — no RCM arises."}]}, {"category": "Arbitral Tribunal Services", "scenarios": [{"option": "Standard case", "mechanism": "RCM", "supplier": "Arbitral tribunal", "recipient": "Any business entity", "rate": "18%", "itc": "Available to recipient", "notes": ""}]}, {"category": "Sponsorship Services", "scenarios": [{"option": "Standard case", "mechanism": "RCM", "supplier": "Any person", "recipient": "Body corporate or partnership firm", "rate": "18%", "itc": "Available to recipient", "notes": "Sponsorship to individuals/other entity types stays under forward charge or exempt as applicable."}]}, {"category": "Government / Local Authority Services", "scenarios": [{"option": "Standard case", "mechanism": "RCM", "supplier": "Central/State Govt or local authority", "recipient": "Any business entity", "rate": "As applicable to the underlying service", "itc": "Available to recipient", "notes": "Excludes renting of immovable property and specifically excluded services (e.g. postal, transport of goods/passengers), which follow their own rules."}]}, {"category": "Director's Services", "scenarios": [{"option": "Standard case", "mechanism": "RCM", "supplier": "Director (in non-employee capacity — sitting fees, commission)", "recipient": "Company/body corporate", "rate": "18%", "itc": "Available to recipient", "notes": "Salary to a whole-time director under employment is outside GST altogether."}]}, {"category": "Insurance & Recovery Agents", "scenarios": [{"option": "Insurance agent", "mechanism": "RCM", "supplier": "Insurance agent", "recipient": "Insurance company", "rate": "18%", "itc": "Available to recipient", "notes": ""}, {"option": "Recovery agent", "mechanism": "RCM", "supplier": "Recovery agent", "recipient": "Banking company/financial institution/NBFC", "rate": "18%", "itc": "Available to recipient", "notes": ""}]}, {"category": "Copyright Services", "scenarios": [{"option": "Default — RCM", "mechanism": "RCM", "supplier": "Author, music composer, photographer, artist", "recipient": "Publisher, music company, producer", "rate": "12%", "itc": "Available to recipient", "notes": ""}, {"option": "Author opts forward charge", "mechanism": "Forward Charge", "supplier": "Author who has filed the option to pay forward charge", "recipient": "Publisher", "rate": "12%", "itc": "Supplier claims own ITC; no RCM", "notes": "Available specifically to authors, via a declaration filed with the jurisdictional officer."}]}, {"category": "RBI Services", "scenarios": [{"option": "Standard case", "mechanism": "RCM", "supplier": "Reserve Bank of India", "recipient": "Any registered person", "rate": "As applicable", "itc": "Available to recipient", "notes": ""}]}, {"category": "Lending of Securities", "scenarios": [{"option": "Standard case", "mechanism": "RCM", "supplier": "Lender (owner of securities, via approved intermediary)", "recipient": "Borrower", "rate": "18%", "itc": "Available to recipient", "notes": ""}]}, {"category": "Renting of Immovable Property", "scenarios": [{"option": "Residential dwelling — let to a business", "mechanism": "RCM", "supplier": "Any person (owner)", "recipient": "Registered person, where the dwelling is used for business purposes", "rate": "18%", "itc": "Available to recipient", "notes": "Effective 18-Jul-2022. Renting for purely personal residential use by a registered person is not covered."}, {"option": "Commercial property — unregistered landlord", "mechanism": "RCM", "supplier": "Unregistered person (landlord)", "recipient": "Registered person (tenant)", "rate": "18%", "itc": "Available to recipient", "notes": "Effective 10-Oct-2024."}]}, {"category": "Real Estate — Promoter", "scenarios": [{"option": "TDR / FSI transfer", "mechanism": "RCM", "supplier": "Landowner / development rights holder", "recipient": "Promoter", "rate": "18% (with exemption up to unsold units at completion)", "itc": "Subject to Notification 4/2019-CT(R) conditions", "notes": ""}, {"option": "Long-term lease premium", "mechanism": "RCM", "supplier": "Landowner granting long-term lease", "recipient": "Promoter", "rate": "18%", "itc": "Subject to conditions", "notes": ""}]}, {"category": "Import of Services", "scenarios": [{"option": "Any import of service for consideration", "mechanism": "RCM", "supplier": "Foreign supplier with no establishment in India", "recipient": "Any person in India (business or non-business)", "rate": "As applicable to the service", "itc": "Available to recipient if used for business", "notes": "Applies even to one-off, non-business imports (software licences, consultancy, subscriptions). Certain OIDAR-to-consumer imports instead require the foreign supplier itself to register in India."}]}]};
-render();
+fetch('data.json')
+  .then(r => r.json())
+  .then(items => {
+    const list = document.getElementById('list');
+    if (!items || items.length === 0) { list.innerHTML = '<p class="empty">No items added yet.</p>'; return; }
+    list.innerHTML = items.map(item => `
+      <a class="item" href="${item.file}">
+        <h3>${item.title}</h3>
+        <p>${item.description || ''}</p>
+      </a>
+    `).join('');
+  })
+  .catch(() => { document.getElementById('list').innerHTML = '<p class="empty">Could not load data.json</p>'; });
 </script>
 </body>
 </html>
