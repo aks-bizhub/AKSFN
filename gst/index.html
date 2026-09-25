@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GST</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; min-height: 100vh; padding: 40px 20px; }
+  .container { max-width: 640px; margin: 0 auto; }
+  .back { display: inline-block; margin-bottom: 20px; font-size: 13px; color: #2E86C1; text-decoration: none; }
+  h1 { color: #1a1a2e; font-size: 24px; margin-bottom: 6px; }
+  p.subtitle { color: #6b7280; font-size: 14px; margin-bottom: 28px; }
+  .list { display: flex; flex-direction: column; gap: 12px; }
+  .item { display: block; background: #ffffff; border-radius: 10px; padding: 16px 20px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.06); border-left: 4px solid #C0392B; }
+  .item:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+  .item h3 { font-size: 15px; color: #1a1a2e; margin-bottom: 3px; }
+  .item p { font-size: 12.5px; color: #6b7280; }
+  .empty { text-align: center; color: #9ca3af; font-size: 13px; padding: 30px 0; }
+  footer { text-align: center; margin-top: 36px; font-size: 12px; color: #9ca3af; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="../index.html">&larr; Back to AKS FinSight Nexus</a>
+    <h1>GST</h1>
+    <p class="subtitle">Compliance, returns &amp; reference notes</p>
+    <div class="list" id="list"><p class="empty">Loading…</p></div>
+    <footer>CA Amit Singh · AKS FinSight Nexus</footer>
+  </div>
+<script>
+fetch('data.json')
+  .then(r => r.json())
+  .then(items => {
+    const list = document.getElementById('list');
+    if (!items || items.length === 0) { list.innerHTML = '<p class="empty">No items added yet.</p>'; return; }
+    list.innerHTML = items.map(item => `
+      <a class="item" href="${item.file}">
+        <h3>${item.title}</h3>
+        <p>${item.description || ''}</p>
+      </a>
+    `).join('');
+  })
+  .catch(() => { document.getElementById('list').innerHTML = '<p class="empty">Could not load data.json</p>'; });
+</script>
+</body>
+</html>
