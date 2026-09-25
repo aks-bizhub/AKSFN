@@ -78,105 +78,11 @@ footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);font-
 </div>
 
 <script>
-let DATA = {goods:[], services:[]};
-let activeFilter = 'all';
-const resultsEl = document.getElementById('results');
-const emptyEl = document.getElementById('empty');
-const countEl = document.getElementById('count');
-const input = document.getElementById('q');
-
-function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function hl(text,q){
-  if(!q) return esc(text);
-  const i = String(text).toLowerCase().indexOf(q.toLowerCase());
-  if(i===-1) return esc(text);
-  return esc(text.slice(0,i))+'<span class="hl">'+esc(text.slice(i,i+q.length))+'</span>'+esc(text.slice(i+q.length));
-}
-function matches(obj,q){
-  if(!q) return true;
-  return JSON.stringify(obj).toLowerCase().includes(q.toLowerCase());
-}
-
-function renderGoods(cats, q){
-  let html='';
-  let shown=0;
-  cats.forEach(cat=>{
-    const items = cat.items.filter(it=>matches(it,q));
-    if(!items.length) return;
-    shown += items.length;
-    html += `<div class="cat"><div class="cat-head"><h2>${esc(cat.category)}</h2><span class="cat-badge">Goods · ${items.length}</span></div>`;
-    items.forEach(it=>{
-      html += `<div class="scenario">
-        <div class="scenario-top"><span class="scenario-title">${hl(it.item,q)}</span><span class="mech mech-rcm">RCM</span></div>
-        <div class="grid">
-          <div><span>Supplier</span>${hl(it.supplier,q)}</div>
-          <div><span>Recipient (pays RCM)</span>${hl(it.recipient,q)}</div>
-          <div><span>Rate</span>${hl(it.rate||'—',q)}</div>
-        </div>
-      </div>`;
-    });
-    html += `</div>`;
-  });
-  return {html, shown};
-}
-
-function renderServices(cats, q){
-  let html='';
-  let shown=0;
-  cats.forEach(cat=>{
-    const scenarios = (cat.scenarios||[]).filter(s=>matches(s,q) || matches(cat.category,q));
-    if(!scenarios.length) return;
-    shown += scenarios.length;
-    html += `<div class="cat"><div class="cat-head"><h2>${esc(cat.category)}</h2><span class="cat-badge">Services · ${scenarios.length} option${scenarios.length>1?'s':''}</span></div>`;
-    if(cat.intro) html += `<div class="intro">${esc(cat.intro)}</div>`;
-    scenarios.forEach(s=>{
-      const mechClass = s.mechanism==='RCM' ? 'mech-rcm' : 'mech-fc';
-      html += `<div class="scenario">
-        <div class="scenario-top"><span class="scenario-title">${hl(s.option,q)}</span><span class="mech ${mechClass}">${esc(s.mechanism)}</span></div>
-        <div class="grid">
-          <div><span>Supplier</span>${hl(s.supplier,q)}</div>
-          <div><span>Recipient</span>${hl(s.recipient,q)}</div>
-          <div><span>Rate</span>${hl(s.rate||'—',q)}</div>
-          <div><span>ITC</span>${hl(s.itc||'—',q)}</div>
-        </div>
-        ${s.notes ? `<div class="notes">${hl(s.notes,q)}</div>` : ''}
-      </div>`;
-    });
-    if(cat.exempt_note) html += `<div class="exempt-note">${esc(cat.exempt_note)}</div>`;
-    html += `</div>`;
-  });
-  return {html, shown};
-}
-
-function render(){
-  const q = input.value.trim();
-  let html='', total=0;
-  if(activeFilter==='all' || activeFilter==='goods'){
-    const r = renderGoods(DATA.goods, q); html+=r.html; total+=r.shown;
-  }
-  if(activeFilter==='all' || activeFilter==='services'){
-    const r = renderServices(DATA.services, q); html+=r.html; total+=r.shown;
-  }
-  resultsEl.innerHTML = html;
-  emptyEl.style.display = total ? 'none' : 'block';
-  countEl.textContent = total + ' matching entr' + (total===1?'y':'ies');
-}
-
-input.addEventListener('input', render);
-document.querySelectorAll('#chips .chip').forEach(c=>{
-  c.addEventListener('click', ()=>{
-    document.querySelectorAll('#chips .chip').forEach(x=>x.classList.remove('active'));
-    c.classList.add('active');
-    activeFilter = c.dataset.f;
-    render();
-  });
-});
-
-fetch('data.json')
+let fetch('data.json')
   .then(r=>r.json())
   .then(d=>{ DATA = d; render(); })
   .catch(err=>{
-    resultsEl.innerHTML = '<div class="empty">Could not load data.json — make sure it is in the same folder as this HTML file and that you are opening it via a local server (not double-clicking the file directly).</div>';
+    resultsEl.innerHTML = '<div class="empty">Could not load data.json — make sure it is in the same folder/repo path as this HTML file.</div>';
     countEl.textContent = '';
   });
 </script>
