@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reverse Charge Mechanism (RCM) under GST — Detailed Guide</title>
+<style>
+:root{--red:#C0392B;--blue:#2E86C1;--ink:#1b1f23;--sub:#5a6470;--bg:#fff;--card:#f7f9fb;--line:#e3e8ee;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5;}
+.wrap{max-width:920px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+header{border-bottom:3px solid var(--red);padding-bottom:1rem;margin-bottom:1.2rem;}
+.brand{font-size:.78rem;letter-spacing:.02em;color:var(--blue);font-weight:700;}
+h1{font-size:1.7rem;margin:.3rem 0 .2rem;}
+.tag{color:var(--sub);font-size:.9rem;}
+
+.searchbox{display:flex;align-items:center;gap:.5rem;background:var(--card);border:1px solid var(--line);
+  border-radius:8px;padding:.6rem .9rem;margin:1rem 0 .6rem;position:sticky;top:0;z-index:5;}
+.searchbox input{flex:1;border:none;background:transparent;font-size:1rem;color:var(--ink);outline:none;}
+.searchbox svg{flex-shrink:0;color:var(--sub);}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:.4rem 0 1rem;}
+.chip{border:1px solid var(--line);background:var(--bg);color:var(--sub);font-size:.78rem;
+  padding:.25rem .65rem;border-radius:999px;cursor:pointer;}
+.chip.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+.count{font-size:.78rem;color:var(--sub);margin-bottom:.6rem;}
+
+.cat{margin:1.6rem 0;}
+.cat-head{display:flex;align-items:baseline;gap:.6rem;border-left:4px solid var(--red);padding-left:.6rem;}
+.cat-head h2{font-size:1.05rem;margin:0;color:var(--red);}
+.cat-badge{font-size:.7rem;background:var(--card);color:var(--sub);padding:.1rem .5rem;border-radius:999px;}
+.intro{color:var(--sub);font-size:.86rem;margin:.4rem 0 .8rem;max-width:70ch;}
+
+.scenario{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;margin:.6rem 0;}
+.scenario-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem;}
+.scenario-title{font-weight:700;font-size:.92rem;}
+.mech{font-size:.72rem;font-weight:700;padding:.15rem .55rem;border-radius:999px;letter-spacing:.02em;}
+.mech-rcm{background:#fbe4e1;color:var(--red);}
+.mech-fc{background:#dcedf9;color:var(--blue);}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;font-size:.85rem;}
+.grid div span{display:block;color:var(--sub);font-size:.72rem;text-transform:uppercase;letter-spacing:.02em;margin-bottom:.1rem;}
+.notes{font-size:.82rem;color:var(--sub);margin-top:.5rem;border-top:1px dashed var(--line);padding-top:.4rem;}
+.exempt-note{font-size:.82rem;color:var(--sub);background:#eef6fb;border-left:4px solid var(--blue);padding:.5rem .7rem;margin-top:.6rem;border-radius:0 6px 6px 0;}
+
+.hl{background:#fde9c8;padding:0 1px;border-radius:2px;}
+.empty{color:var(--sub);font-size:.9rem;padding:1.2rem 0;}
+footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.76rem;color:var(--sub);}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#15171a;--ink:#e8eaed;--sub:#9aa4af;--card:#1e2126;--line:#2b2f35;}
+  .mech-rcm{background:#3a1f1c;} .mech-fc{background:#17303f;} .hl{background:#5a4420;color:#fff;}
+}
+:root[data-theme="dark"]{--bg:#15171a;--ink:#e8eaed;--sub:#9aa4af;--card:#1e2126;--line:#2b2f35;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">AKS FINSIGHT NEXUS</div>
+  <h1>Reverse Charge Mechanism (RCM) under GST</h1>
+  <div class="tag">Category-wise, scenario-by-scenario reference — data loaded from data.json</div>
+</header>
+
+<div class="searchbox">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  <input id="q" type="text" placeholder="Search e.g. 'GTA', 'director', 'renting', 'import'…" autocomplete="off">
+</div>
+<div class="chips" id="chips">
+  <span class="chip active" data-f="all">All</span>
+  <span class="chip" data-f="goods">Goods</span>
+  <span class="chip" data-f="services">Services</span>
+</div>
+<div class="count" id="count"></div>
+
+<div id="results"></div>
+<div class="empty" id="empty" style="display:none">No matching entries. Try a different keyword.</div>
+
+<footer>Prepared by CA Amit Singh — AKS FinSight Nexus. Reflects CGST/IGST Acts and notifications as amended up to preparation date; cross-check the latest Council notifications before relying on any entry. Data: <code>data.json</code> (place it alongside this file).</footer>
+</div>
+
+<script>
+let DATA = {goods:[], services:[]};
+let activeFilter = 'all';
+const resultsEl = document.getElementById('results');
+const emptyEl = document.getElementById('empty');
+const countEl = document.getElementById('count');
+const input = document.getElementById('q');
+
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function hl(text,q){
+  if(!q) return esc(text);
+  const i = String(text).toLowerCase().indexOf(q.toLowerCase());
+  if(i===-1) return esc(text);
+  return esc(text.slice(0,i))+'<span class="hl">'+esc(text.slice(i,i+q.length))+'</span>'+esc(text.slice(i+q.length));
+}
+function matches(obj,q){
+  if(!q) return true;
+  return JSON.stringify(obj).toLowerCase().includes(q.toLowerCase());
+}
+
+function renderGoods(cats, q){
+  let html='';
+  let shown=0;
+  cats.forEach(cat=>{
+    const items = cat.items.filter(it=>matches(it,q));
+    if(!items.length) return;
+    shown += items.length;
+    html += `<div class="cat"><div class="cat-head"><h2>${esc(cat.category)}</h2><span class="cat-badge">Goods · ${items.length}</span></div>`;
+    items.forEach(it=>{
+      html += `<div class="scenario">
+        <div class="scenario-top"><span class="scenario-title">${hl(it.item,q)}</span><span class="mech mech-rcm">RCM</span></div>
+        <div class="grid">
+          <div><span>Supplier</span>${hl(it.supplier,q)}</div>
+          <div><span>Recipient (pays RCM)</span>${hl(it.recipient,q)}</div>
+          <div><span>Rate</span>${hl(it.rate||'—',q)}</div>
+        </div>
+      </div>`;
+    });
+    html += `</div>`;
+  });
+  return {html, shown};
+}
+
+function renderServices(cats, q){
+  let html='';
+  let shown=0;
+  cats.forEach(cat=>{
+    const scenarios = (cat.scenarios||[]).filter(s=>matches(s,q) || matches(cat.category,q));
+    if(!scenarios.length) return;
+    shown += scenarios.length;
+    html += `<div class="cat"><div class="cat-head"><h2>${esc(cat.category)}</h2><span class="cat-badge">Services · ${scenarios.length} option${scenarios.length>1?'s':''}</span></div>`;
+    if(cat.intro) html += `<div class="intro">${esc(cat.intro)}</div>`;
+    scenarios.forEach(s=>{
+      const mechClass = s.mechanism==='RCM' ? 'mech-rcm' : 'mech-fc';
+      html += `<div class="scenario">
+        <div class="scenario-top"><span class="scenario-title">${hl(s.option,q)}</span><span class="mech ${mechClass}">${esc(s.mechanism)}</span></div>
+        <div class="grid">
+          <div><span>Supplier</span>${hl(s.supplier,q)}</div>
+          <div><span>Recipient</span>${hl(s.recipient,q)}</div>
+          <div><span>Rate</span>${hl(s.rate||'—',q)}</div>
+          <div><span>ITC</span>${hl(s.itc||'—',q)}</div>
+        </div>
+        ${s.notes ? `<div class="notes">${hl(s.notes,q)}</div>` : ''}
+      </div>`;
+    });
+    if(cat.exempt_note) html += `<div class="exempt-note">${esc(cat.exempt_note)}</div>`;
+    html += `</div>`;
+  });
+  return {html, shown};
+}
+
+function render(){
+  const q = input.value.trim();
+  let html='', total=0;
+  if(activeFilter==='all' || activeFilter==='goods'){
+    const r = renderGoods(DATA.goods, q); html+=r.html; total+=r.shown;
+  }
+  if(activeFilter==='all' || activeFilter==='services'){
+    const r = renderServices(DATA.services, q); html+=r.html; total+=r.shown;
+  }
+  resultsEl.innerHTML = html;
+  emptyEl.style.display = total ? 'none' : 'block';
+  countEl.textContent = total + ' matching entr' + (total===1?'y':'ies');
+}
+
+input.addEventListener('input', render);
+document.querySelectorAll('#chips .chip').forEach(c=>{
+  c.addEventListener('click', ()=>{
+    document.querySelectorAll('#chips .chip').forEach(x=>x.classList.remove('active'));
+    c.classList.add('active');
+    activeFilter = c.dataset.f;
+    render();
+  });
+});
+
+fetch('data.json')
+  .then(r=>r.json())
+  .then(d=>{ DATA = d; render(); })
+  .catch(err=>{
+    resultsEl.innerHTML = '<div class="empty">Could not load data.json — make sure it is in the same folder as this HTML file and that you are opening it via a local server (not double-clicking the file directly).</div>';
+    countEl.textContent = '';
+  });
+</script>
+</body>
+</html>
