@@ -1,7 +1,230 @@
-[
-  {
-    "title": "RCM",
-    "description": "GST charge and paid by Service or Goods recipient",
-    "file": "rcm/index.html"
-  }
-]
+{
+  "goods": [
+    {
+      "category": "Agricultural Produce",
+      "items": [
+        {"item":"Cashew nuts (not shelled/peeled)","supplier":"Agriculturist","recipient":"Any registered person","rate":"5%"},
+        {"item":"Bidi wrapper leaves (tendu)","supplier":"Agriculturist","recipient":"Any registered person","rate":"18%"},
+        {"item":"Tobacco leaves","supplier":"Agriculturist","recipient":"Any registered person","rate":"5%"},
+        {"item":"Raw cotton","supplier":"Agriculturist","recipient":"Any registered person","rate":"5%"}
+      ]
+    },
+    {
+      "category": "Manufactured / Processed Goods",
+      "items": [
+        {"item":"Silk yarn","supplier":"Manufacturer from raw silk/cocoons","recipient":"Any registered person","rate":"5%"}
+      ]
+    },
+    {
+      "category": "Government-Sourced Goods",
+      "items": [
+        {"item":"Supply of lottery","supplier":"State Govt/UT/local authority","recipient":"Lottery distributor/selling agent","rate":"12%/28% (based on lottery type)"},
+        {"item":"Used vehicles, seized/confiscated goods, old & used goods, waste and scrap","supplier":"Central/State Govt, local authority","recipient":"Any registered person","rate":"As applicable to goods"}
+      ]
+    },
+    {
+      "category": "Financial Goods",
+      "items": [
+        {"item":"Priority Sector Lending Certificate","supplier":"Any registered person","recipient":"Any registered person","rate":"12%"}
+      ]
+    },
+    {
+      "category": "Metal Scrap (w.e.f. 10-Oct-2024)",
+      "items": [
+        {"item":"Metal scrap (Chapters 72–81)","supplier":"Any unregistered person","recipient":"Any registered person","rate":"As applicable"}
+      ]
+    }
+  ],
+  "services": [
+    {
+      "category": "Goods Transport Agency (GTA) — Transporter",
+      "intro": "A GTA has three possible options on the same freight transaction — the option actually exercised decides who pays and whether ITC flows.",
+      "scenarios": [
+        {
+          "option": "Option 1 — GTA opts forward charge, concessional rate",
+          "mechanism": "Forward Charge",
+          "supplier": "GTA (registered, has exercised the annual option)",
+          "recipient": "Any recipient",
+          "rate": "5%",
+          "itc": "GTA cannot claim ITC on inputs used for this supply",
+          "notes": "GTA collects and pays tax itself; recipient pays GTA the invoice amount including GST."
+        },
+        {
+          "option": "Option 2 — GTA opts forward charge, regular rate",
+          "mechanism": "Forward Charge",
+          "supplier": "GTA (registered, has exercised the annual option)",
+          "recipient": "Any recipient",
+          "rate": "12%",
+          "itc": "GTA can claim full ITC on inputs",
+          "notes": "Chosen when the GTA wants to pass on ITC benefit / claim its own ITC."
+        },
+        {
+          "option": "Option 3 — GTA has not opted for forward charge (default)",
+          "mechanism": "RCM",
+          "supplier": "GTA",
+          "recipient": "Factory, society, registered person, body corporate, partnership firm, casual taxable person, or any person registered under GST",
+          "rate": "5%",
+          "itc": "ITC available to the recipient who pays the RCM tax",
+          "notes": "This is the default position unless the GTA has filed the forward-charge option (Annexure V) for the financial year."
+        }
+      ],
+      "exempt_note": "GTA services to unregistered individuals (for personal use) and specified exempt categories (e.g. agricultural produce, milk, salt, relief materials, single consignment freight below ₹1,500) are outside GST altogether."
+    },
+    {
+      "category": "Renting of Motor Vehicle (Passenger Transport)",
+      "intro": "Two rate structures exist for the same service, and RCM applies only in one of them.",
+      "scenarios": [
+        {
+          "option": "Option 1 — Supplier charges concessional rate, no ITC",
+          "mechanism": "RCM",
+          "supplier": "Any person other than a body corporate, paying GST at 5% (no ITC)",
+          "recipient": "Body corporate",
+          "rate": "5%",
+          "itc": "ITC available to recipient body corporate on the RCM tax paid",
+          "notes": "Most common case — small operators/individual owners renting vehicles to companies."
+        },
+        {
+          "option": "Option 2 — Supplier charges regular rate, with ITC",
+          "mechanism": "Forward Charge",
+          "supplier": "Any person charging GST at 12% (claiming full ITC)",
+          "recipient": "Any recipient",
+          "rate": "12%",
+          "itc": "Supplier claims own ITC; no RCM applies",
+          "notes": "RCM does not apply once the supplier has opted to charge 12% with ITC."
+        }
+      ]
+    },
+    {
+      "category": "Security Services (Supply of Manpower)",
+      "intro": "RCM applies only when the supplier is not a body corporate; the recipient's status also matters.",
+      "scenarios": [
+        {
+          "option": "Standard case — non-body-corporate security agency",
+          "mechanism": "RCM",
+          "supplier": "Any person other than a body corporate (e.g. proprietorship, partnership security agency)",
+          "recipient": "Registered person",
+          "rate": "18%",
+          "itc": "Available to recipient",
+          "notes": "Excludes Government departments and composition dealers as recipients — for them, forward charge applies instead."
+        },
+        {
+          "option": "Exception — supplier is a body corporate",
+          "mechanism": "Forward Charge",
+          "supplier": "Body corporate security agency",
+          "recipient": "Any recipient",
+          "rate": "18%",
+          "itc": "Available to recipient in the normal course",
+          "notes": "RCM notification specifically excludes body corporate suppliers."
+        }
+      ]
+    },
+    {
+      "category": "Legal Services",
+      "scenarios": [
+        {
+          "option": "Standard case",
+          "mechanism": "RCM",
+          "supplier": "Individual advocate, senior advocate, or firm of advocates",
+          "recipient": "Any business entity with turnover above the applicable threshold",
+          "rate": "18%",
+          "itc": "Available to recipient",
+          "notes": "Services to non-business individuals, or to entities below threshold, are exempt — no RCM arises."
+        }
+      ]
+    },
+    {
+      "category": "Arbitral Tribunal Services",
+      "scenarios": [
+        {"option":"Standard case","mechanism":"RCM","supplier":"Arbitral tribunal","recipient":"Any business entity","rate":"18%","itc":"Available to recipient","notes":""}
+      ]
+    },
+    {
+      "category": "Sponsorship Services",
+      "scenarios": [
+        {"option":"Standard case","mechanism":"RCM","supplier":"Any person","recipient":"Body corporate or partnership firm","rate":"18%","itc":"Available to recipient","notes":"Sponsorship to individuals/other entity types stays under forward charge or exempt as applicable."}
+      ]
+    },
+    {
+      "category": "Government / Local Authority Services",
+      "scenarios": [
+        {"option":"Standard case","mechanism":"RCM","supplier":"Central/State Govt or local authority","recipient":"Any business entity","rate":"As applicable to the underlying service","itc":"Available to recipient","notes":"Excludes renting of immovable property and specifically excluded services (e.g. postal, transport of goods/passengers), which follow their own rules."}
+      ]
+    },
+    {
+      "category": "Director's Services",
+      "scenarios": [
+        {"option":"Standard case","mechanism":"RCM","supplier":"Director (in non-employee capacity — sitting fees, commission)","recipient":"Company/body corporate","rate":"18%","itc":"Available to recipient","notes":"Salary to a whole-time director under employment is outside GST altogether."}
+      ]
+    },
+    {
+      "category": "Insurance & Recovery Agents",
+      "scenarios": [
+        {"option":"Insurance agent","mechanism":"RCM","supplier":"Insurance agent","recipient":"Insurance company","rate":"18%","itc":"Available to recipient","notes":""},
+        {"option":"Recovery agent","mechanism":"RCM","supplier":"Recovery agent","recipient":"Banking company/financial institution/NBFC","rate":"18%","itc":"Available to recipient","notes":""}
+      ]
+    },
+    {
+      "category": "Copyright Services",
+      "scenarios": [
+        {"option":"Default — RCM","mechanism":"RCM","supplier":"Author, music composer, photographer, artist","recipient":"Publisher, music company, producer","rate":"12%","itc":"Available to recipient","notes":""},
+        {"option":"Author opts forward charge","mechanism":"Forward Charge","supplier":"Author who has filed the option to pay forward charge","recipient":"Publisher","rate":"12%","itc":"Supplier claims own ITC; no RCM","notes":"Available specifically to authors, via a declaration filed with the jurisdictional officer."}
+      ]
+    },
+    {
+      "category": "RBI Services",
+      "scenarios": [
+        {"option":"Standard case","mechanism":"RCM","supplier":"Reserve Bank of India","recipient":"Any registered person","rate":"As applicable","itc":"Available to recipient","notes":""}
+      ]
+    },
+    {
+      "category": "Lending of Securities",
+      "scenarios": [
+        {"option":"Standard case","mechanism":"RCM","supplier":"Lender (owner of securities, via approved intermediary)","recipient":"Borrower","rate":"18%","itc":"Available to recipient","notes":""}
+      ]
+    },
+    {
+      "category": "Renting of Immovable Property",
+      "scenarios": [
+        {
+          "option": "Residential dwelling — let to a business",
+          "mechanism": "RCM",
+          "supplier": "Any person (owner)",
+          "recipient": "Registered person, where the dwelling is used for business purposes",
+          "rate": "18%",
+          "itc": "Available to recipient",
+          "notes": "Effective 18-Jul-2022. Renting for purely personal residential use by a registered person is not covered."
+        },
+        {
+          "option": "Commercial property — unregistered landlord",
+          "mechanism": "RCM",
+          "supplier": "Unregistered person (landlord)",
+          "recipient": "Registered person (tenant)",
+          "rate": "18%",
+          "itc": "Available to recipient",
+          "notes": "Effective 10-Oct-2024."
+        }
+      ]
+    },
+    {
+      "category": "Real Estate — Promoter",
+      "scenarios": [
+        {"option":"TDR / FSI transfer","mechanism":"RCM","supplier":"Landowner / development rights holder","recipient":"Promoter","rate":"18% (with exemption up to unsold units at completion)","itc":"Subject to Notification 4/2019-CT(R) conditions","notes":""},
+        {"option":"Long-term lease premium","mechanism":"RCM","supplier":"Landowner granting long-term lease","recipient":"Promoter","rate":"18%","itc":"Subject to conditions","notes":""}
+      ]
+    },
+    {
+      "category": "Import of Services",
+      "scenarios": [
+        {
+          "option": "Any import of service for consideration",
+          "mechanism": "RCM",
+          "supplier": "Foreign supplier with no establishment in India",
+          "recipient": "Any person in India (business or non-business)",
+          "rate": "As applicable to the service",
+          "itc": "Available to recipient if used for business",
+          "notes": "Applies even to one-off, non-business imports (software licences, consultancy, subscriptions). Certain OIDAR-to-consumer imports instead require the foreign supplier itself to register in India."
+        }
+      ]
+    }
+  ]
+}
